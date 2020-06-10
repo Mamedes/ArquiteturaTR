@@ -18,7 +18,7 @@ body {
 }
 header div.links {
   display: grid;
-  grid-template-columns: 600px 600px;
+  grid-template-columns: 800px 800px;
   align-items: center;
   grid-gap: 24px;
   text-align: left;
