@@ -1,0 +1,31 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="card">
+    <section class="avatar" style="background: url({{agenda.avatar_url}}) no-repeat center center / cover "></section>
+    <section class="details">
+
+      <form method="POST" action="/agenda?_method=PUT">
+        <h3>Editar Instrutor</h3>
+        {% include 'agenda/fields.njk' %}
+        <input type="hidden" name="id" value="{{agenda.id}}">
+      </form>
+
+      <form id="form-delete" action="/agenda?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{agenda.id}}">
+        <button type="submit">Deletar
+        </button>
+      </form>
+      <script>
+        const formDelete = document.querySelector("#form-delete")
+        formDelete.addEventListener("submit", function (event) {
+          confirm("Deseja Deletar?")
+          if (!confimation) {
+            event.preventDefault()
+          }
+        })
+      </script>
+    </section>
+  </div>
+
+{% endblock %}>

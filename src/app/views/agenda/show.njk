@@ -1,0 +1,31 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background: url({{agenda.avatar_url}})
+     no-repeat center center / cover "></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>{{agenda.name}}</div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{agenda.email}}</div>
+            </div>
+            <div class="item">
+                <div>Telefone</div>
+                <div>{{agenda.telefone}}</div>
+            </div>
+            <div class="item">
+                <div>Endereco</div>
+                <div>{{agenda.endereco}}</div>
+            </div>
+
+            <a href="/agenda/{{ agenda.id }}/edit" class="button">Editar</a>
+        </section>
+    </div>
+{% endblock %}>

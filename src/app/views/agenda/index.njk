@@ -1,0 +1,33 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <div class="card table-container">
+    <div class="header"></div>
+
+    <table width="100%">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for agenda in agenda %}
+          <tr>
+            <td>{{agenda.name}}</td>
+            <td>{{agenda.email}}</td>
+            <td>{{agenda.telefone}}</td>
+            <td>{{agenda.endereco}}</td>
+            <td>
+              <a href="/agenda/{{agenda.id}}">ver</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}>
